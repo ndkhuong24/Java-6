@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot</title>
+</head>
+<body>
+<img th:src="@{/images/logo.png}" style="height: 80px">
+<nav th:replace="~{/layout/menu.html}"></nav>
+<h1 th:text="${message}"></h1>
+
+<ul th:object="${student}">
+    <li th:text="${student.name}"></li>
+    <li th:text="*{gender}"></li>
+    <li th:text="*{marks}"></li>
+    <li th:text="*{subjects}"></li>
+    <li th:text="*{contact.email}"></li>
+    <li th:text="*{contact.phone}"></li>
+</ul>
+</body>
+</html>

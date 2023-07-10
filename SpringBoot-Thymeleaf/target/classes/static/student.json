@@ -1,0 +1,13 @@
+{
+  "name": "Nguyễn Văn Tủm",
+  "gender": true,
+  "marks": 8.5,
+  "contact": {
+    "email": "tuimvn@gmail.com",
+    "phone": "0987654321"
+  },
+  "subjects": [
+    "WEB205",
+    "COM1080"
+  ]
+}
