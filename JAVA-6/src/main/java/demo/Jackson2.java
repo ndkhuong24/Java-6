@@ -15,12 +15,12 @@ import java.util.Map;
 public class Jackson2 {
     public static void main(String[] args) throws IOException {
 //        demo1();
-//        demo2();
+        demo2();
 //        demo3();
 //        demo4();
 //        demo5();
 //        demo6();
-        demo7();
+//        demo7();
     }
 
     private static void demo7() throws IOException {
@@ -97,14 +97,14 @@ public class Jackson2 {
     }
 
     private static void demo2() throws IOException {
-        String path = "C:\\Users\\kn134\\Downloads\\JAVA-6\\src\\main\\resources\\students.json";
+        String path = "C:\\Users\\kn134\\Downloads\\Java-6-test\\JAVA-6\\src\\main\\resources\\students.json";
         ObjectMapper mapper = new ObjectMapper();
         List<Map<String, Object>> students = mapper.readValue(new File(path), List.class);
         students.forEach(System.out::println);
     }
 
     private static void demo1() throws IOException {
-        String path = "C:\\Users\\kn134\\Downloads\\JAVA-6\\src\\main\\resources\\student.json";
+        String path = "C:\\Users\\kn134\\Downloads\\Java-6-test\\JAVA-6\\src\\main\\resources\\students.json";
         ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> student = mapper.readValue(new File(path), Map.class);
 

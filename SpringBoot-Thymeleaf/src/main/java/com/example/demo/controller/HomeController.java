@@ -16,7 +16,7 @@ public class HomeController {
         model.addAttribute("message", "Welcome to Thymeleaf");
 
         ObjectMapper mapper = new ObjectMapper();
-        String path = "C:\\Users\\kn134\\Downloads\\SpringBoot-Thymeleaf\\src\\main\\resources\\static\\student.json";
+        String path = "C:\\Users\\kn134\\Downloads\\Java-6-test\\SpringBoot-Thymeleaf\\src\\main\\resources\\static\\student.json";
         Student student = mapper.readValue(new File(path), Student.class);
         model.addAttribute("student", student);
 
