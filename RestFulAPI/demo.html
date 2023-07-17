@@ -26,7 +26,7 @@
         </div>
         <div class="mb-3 mt-3">
             <label class="form-label">Mark</label>
-            <input ng-model="form.mark" class="form-control" placeholder="Enter mark">
+            <input ng-model="form.marks" class="form-control" placeholder="Enter marks">
         </div>
         <div class="mb-3 mt-3">
             <label class="form-label">Gender</label>
@@ -64,12 +64,12 @@
             <tr ng-repeat="(key,stu) in items">
                 <td>{{stu.email}}</td>
                 <td>{{stu.fullname}}</td>
-                <td>{{stu.mark}}</td>
+                <td>{{stu.marks}}</td>
                 <td>{{stu.gender?'Male':'Female'}}</td>
                 <td>{{stu.country}}</td>
                 <td>
-                    <button ng-click="edit(key)">Edit</button>
-                    <button ng-click="delete(key)">Delete</button>
+                    <button class="btn btn-secondary" ng-click="edit(key)">Edit</button>
+                    <button class="btn btn-secondary" ng-click="delete(key)">Delete</button>
                 </td>
             </tr>
         </tbody>
