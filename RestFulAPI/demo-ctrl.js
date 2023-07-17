@@ -27,7 +27,7 @@ app.controller("ctrl", function ($scope, $http) {
     }
     $scope.update = function () {
         var item = angular.copy($scope.form);
-        var url = `${host}/student/${$scope.key}.json`;
+        var url = `${host}/students/${$scope.key}.json`;
         $http.put(url, item).then(resp => {
             $scope.items[$scope.key] = resp.data;
             console.log("Success", resp);
