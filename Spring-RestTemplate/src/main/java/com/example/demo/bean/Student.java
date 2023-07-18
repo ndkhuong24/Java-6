@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Student {
     String email;
-    String fullName;
+    String fullname;
     Double marks;
     Boolean gender;
     String country;
