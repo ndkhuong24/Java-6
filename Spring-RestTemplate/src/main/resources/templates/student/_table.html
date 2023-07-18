@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Email address</th>
+        <th>Full name</th>
+        <th>Marks</th>
+        <th>Gender</th>
+        <th>Country</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry: ${items}" th:object="${entry.value}">
+        <td>[[*{email}]]</td>
+        <td>[[*{fullname}]]</td>
+        <td>[[*{marks}]]</td>
+        <td>[[*{gender}]]</td>
+        <td>[[*{country}]]</td>
+        <td>
+            <button th:href="@{|/student/edit/${entry.key}|}">Edit</button>
+            <button th:href="@{|/student/delete/${entry.key}|}">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
