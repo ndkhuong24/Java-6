@@ -28,8 +28,10 @@
         <td>[[*{gender}]]</td>
         <td>[[*{country}]]</td>
         <td>
-            <button th:href="@{|/student/edit/${entry.key}|}">Edit</button>
-            <button th:href="@{|/student/delete/${entry.key}|}">Delete</button>
+            <button class="btn btn-secondary"><a style="color: white;text-decoration: none"
+                                                 th:href="@{|/student/edit/${entry.key}|}">Edit</a></button>
+            <button class="btn btn-secondary"><a style="color: white;text-decoration: none"
+                                                 th:href="@{|/student/delete/${entry.key}|}">Delete</a></button>
         </td>
     </tr>
     </tbody>

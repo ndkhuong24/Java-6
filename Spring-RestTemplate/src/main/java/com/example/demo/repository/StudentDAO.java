@@ -21,8 +21,8 @@ public class StudentDAO {
         return restTemplate.getForObject(url, StudentMap.class);
     }
 
-    public StudentMap findByKey(String key) {
-        return restTemplate.getForObject(getUrl(key), StudentMap.class);
+    public Student findByKey(String key) {
+        return restTemplate.getForObject(getUrl(key), Student.class);
     }
 
     public String create(Student data) {
