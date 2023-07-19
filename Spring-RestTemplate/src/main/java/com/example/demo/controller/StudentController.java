@@ -33,7 +33,7 @@ public class StudentController {
         return "student/index";
     }
 
-    @PutMapping("/update/{key}")
+    @PostMapping("/update/{key}")
     public String update(Student student, @PathVariable("key") String key) {
         dao.update(key, student);
         return "redirect:/student/edit/" + key;
@@ -45,7 +45,7 @@ public class StudentController {
         return "redirect:/student/index";
     }
 
-    @DeleteMapping("/delete/{key}")
+    @GetMapping("/delete/{key}")
     public String delete(@PathVariable("key") String key) {
         dao.delete(key);
         return "redirect:/student/index";
