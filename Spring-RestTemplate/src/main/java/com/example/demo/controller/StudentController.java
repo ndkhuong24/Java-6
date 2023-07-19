@@ -6,9 +6,7 @@ import com.example.demo.repository.StudentDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/student")
@@ -17,21 +15,33 @@ public class StudentController {
     StudentDAO dao;
 
     @GetMapping("/index")
-    public String index(Model model){
-        Student student = new Student("","",0.0,true,"VN");
-        model.addAttribute("form",student);
+    public String index(Model model) {
+        Student student = new Student("", "", 0.0, true, "VN");
+        model.addAttribute("form", student);
         StudentMap map = dao.findAll();
-        model.addAttribute("items",map);
+        model.addAttribute("items", map);
         return "student/index";
     }
 
     @GetMapping("/edit/{key}")
-    public String edit(Model model, @PathVariable("key") String key){
-        model.addAttribute("key",key);
+    public String edit(Model model, @PathVariable("key") String key) {
+        model.addAttribute("key", key);
         Student student = dao.findByKey(key);
-        model.addAttribute("form",student);
+        model.addAttribute("form", student);
         StudentMap map = dao.findAll();
-        model.addAttribute("items",map);
+        model.addAttribute("items", map);
         return "student/index";
+    }
+
+    @PutMapping("/update/{key}")
+    public String update(Student student, @PathVariable("key") String key) {
+        dao.update(key,student);
+        return "redirect:/student/edit/"+key;
+    }
+
+    @PostMapping("/create")
+    public String create(Student student) {
+        dao.create(student);
+        return "redirect:/student/index";
     }
 }
