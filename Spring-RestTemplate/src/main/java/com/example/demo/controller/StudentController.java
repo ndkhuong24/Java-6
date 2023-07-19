@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/student/index")
+@RequestMapping("/student")
 public class StudentController {
     @Autowired
     StudentDAO dao;
 
-    @GetMapping
+    @GetMapping("/index")
     public String index(Model model){
         Student student = new Student("","",0.0,true,"VN");
         model.addAttribute("form",student);
@@ -25,7 +25,7 @@ public class StudentController {
         return "student/index";
     }
 
-    @GetMapping("/student/edit/{key}")
+    @GetMapping("/edit/{key}")
     public String edit(Model model, @PathVariable("key") String key){
         model.addAttribute("key",key);
         Student student = dao.findByKey(key);
