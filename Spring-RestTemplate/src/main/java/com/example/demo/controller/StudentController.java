@@ -35,13 +35,19 @@ public class StudentController {
 
     @PutMapping("/update/{key}")
     public String update(Student student, @PathVariable("key") String key) {
-        dao.update(key,student);
-        return "redirect:/student/edit/"+key;
+        dao.update(key, student);
+        return "redirect:/student/edit/" + key;
     }
 
     @PostMapping("/create")
     public String create(Student student) {
         dao.create(student);
+        return "redirect:/student/index";
+    }
+
+    @DeleteMapping("/delete/{key}")
+    public String delete(@PathVariable("key") String key) {
+        dao.delete(key);
         return "redirect:/student/index";
     }
 }
