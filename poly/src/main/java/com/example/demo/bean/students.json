@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Nguyễn Văn Tèo",
+    "gender": true,
+    "marks": 8.5,
+    "email": "teovn@gmail.com"
+  },
+  {
+    "name": "Phạm Thị Nở",
+    "gender": false,
+    "marks": 9.5,
+    "email": "nont@gmail.com"
+  },
+  {
+    "name": "Đoàn Chí Phèo",
+    "gender": true,
+    "marks": 4.5,
+    "email": "pheodc@gmail.com"
+  },
+  {
+    "name": "Trần Thị Mỹ Linh",
+    "gender": false,
+    "marks": 6.5,
+    "email": "linhttm@gmail.com"
+  }
+]
