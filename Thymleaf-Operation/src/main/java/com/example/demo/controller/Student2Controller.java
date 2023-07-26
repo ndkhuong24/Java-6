@@ -24,8 +24,7 @@ public class Student2Controller {
                        @RequestParam("index") Optional<Integer> index) throws IOException {
         File file = new ClassPathResource("static/students.json").getFile();
         ObjectMapper mapper = new ObjectMapper();
-        TypeReference<List<Student2>> type = new TypeReference<List<Student2>>() {
-        };
+        TypeReference<List<Student2>> type = new TypeReference<List<Student2>>() {};
         List<Student2> list = mapper.readValue(file, type);
 
         model.addAttribute("sv", list.get(index.orElse(0)));
