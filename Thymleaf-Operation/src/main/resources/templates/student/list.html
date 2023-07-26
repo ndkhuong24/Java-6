@@ -29,6 +29,13 @@
             </li>
         </ul>
     </li>
+    <li th:switch="*{#arrays.length(subject)}">
+        <i>Time</i>
+        <b th:case="1">Mới học</b>
+        <b th:case="2">Đang học</b>
+        <b th:case="*">Sắp ra trường</b>
+    </li>
+    <li th:if="${sv.marks}>9"><i>Title: </i> <b>Golden Bee</b> </li>
 </ul>
 </body>
 </html>
