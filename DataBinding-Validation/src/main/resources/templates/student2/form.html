@@ -17,7 +17,7 @@
 <body>
 <div class="container">
     <h3>Validation</h3>
-    <div th:text="${message}"></div>
+    <div class="errors" th:text="${message}"></div>
     <form action="/student2/validation/validate" method="post" th:object="${student2}">
         <div class="mb-3 mt-3">
             <label class="form-label">Email:</label>
