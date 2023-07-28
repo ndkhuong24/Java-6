@@ -17,15 +17,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/demo")
 public class StudentController {
-    @GetMapping("/utilities")
+    @GetMapping
     public String view(Model model) throws IOException {
         File file = new ClassPathResource("/static/students.json").getFile();
         ObjectMapper mapper = new ObjectMapper();
-        TypeReference<List<Student>> type = new TypeReference<List<Student>>() {
-        };
+        TypeReference<List<Student>> type = new TypeReference<List<Student>>() {};
         List<Student> list = mapper.readValue(file, type);
         model.addAttribute("dssv", list);
         model.addAttribute("now", new Date());
-        return "utilities";
+        return "utility";
     }
 }
