@@ -14,9 +14,6 @@ public class StudentController {
     @GetMapping("/form")
     public String form(Model model){
         Student student = new Student();
-        student.setFullname("Nguyễn Văn Tèo");
-        student.setCountry("VN");
-        student.setGender(true);
         model.addAttribute("student",student);
         return "student/form";
     }

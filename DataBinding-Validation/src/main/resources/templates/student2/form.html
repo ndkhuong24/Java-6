@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student2</title>
+</head>
+<body>
+<div class="container">
+    <h3>Validation</h3>
+    <form action="/student2/validation/validate" method="post" th:object="${student2}">
+        <div class="mb-3 mt-3">
+            <label class="form-label">Email:</label>
+            <input class="form-control" th:field="${student2.email}">
+            <i th:errors="${student2.email}"></i>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Full name:</label>
+            <input class="form-control" th:field="${student2.fullname}">
+            <i th:errors="${student2.fullname}"></i>
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label">Mark:</label>
+            <input class="form-control" th:field="${student2.marks}">
+            <i th:errors="${student2.marks}"></i>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender:</label>
+            <input type="radio" class="form-check-input" th:field="${student2.gender}" th:value="true">Male
+            <input type="radio" class="form-check-input" th:field="${student2.gender}" th:value="false">Male
+            <i th:errors="${student2.gender}"></i>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Country:</label>
+            <select class="form-select" th:field="${student2.country}">
+                <option value="">Country ?</option>
+                <option value="VN">Việt Nam</option>
+                <option value="US">United States</option>
+                <option value="CN">China</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+</body>
+</html>
