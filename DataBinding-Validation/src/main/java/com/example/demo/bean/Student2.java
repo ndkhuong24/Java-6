@@ -16,7 +16,7 @@ public class Student2 {
     @NotBlank(message = "Không được để trống họ và tên")
     private String fullname;
 
-    @NotBlank(message = "Không được để trống điểm")
+    @NotNull(message = "Không được để trống điểm")
     @PositiveOrZero(message = "Điểm phải lớn hơn hoặc bằng 0")
     @Max(value = 10, message = "Điểm phải nhỏ hơn hoặc bằng 10")
     private Double marks;
