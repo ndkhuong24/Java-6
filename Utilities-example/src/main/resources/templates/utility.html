@@ -14,9 +14,10 @@
     <h3>UTILITY OBJECTS</h3>
     <b3>Tổng hợp</b3>
     <ul>
-        <li>Today: <i th:text="${#date.format(now,'EEE,dd-MM-yyy')}"></i></li>
-        <li>Number of students : <i th:text="${#list.size(dssv)}"></i></li>
+        <li>Today: <i th:text="${#dates.format(now,'EEE,dd-MM-yyy')}"></i></li>
+        <li>Number of students : <i th:text="${#lists.size(dssv)}"></i></li>
     </ul>
+    <b>Danh sách</b>
 </div>
 </body>
 </html>
