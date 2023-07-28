@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+<h3>Result</h3>
+<ul th:object="${student}">
+    <li>Email address : <i th:text="${student.email}"></i></li>
+    <li>Full name : <i th:text="${student.fullname}"></i></li>
+    <li>Average marks : <i th:text="${student.marks}"></i></li>
+    <li>Gender : <i th:text="${student.gender}?'Male':'Female'"></i></li>
+    <li>Country : <i th:text="${student.country}"></i></li>
+</ul>
+</body>
+</html>
