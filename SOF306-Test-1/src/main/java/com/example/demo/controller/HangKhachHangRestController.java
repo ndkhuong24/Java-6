@@ -18,8 +18,8 @@ public class HangKhachHangRestController {
     @Autowired
     private IHangKhachHangService service;
 
-    @GetMapping("/hang-khach-hang")
-    public ResponseEntity<List<HangKhachHang>> getAll() {
-        return ResponseEntity.ok(service.getAll());
-    }
+//    @GetMapping("/hang-khach-hang")
+//    public ResponseEntity<List<HangKhachHang>> getAll() {
+//        return ResponseEntity.ok(service.getAll());
+//    }
 }
