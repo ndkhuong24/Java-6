@@ -24,38 +24,38 @@ public class KhachHang {
     @Column(name = "tenkhachhang")
     private String tenKhachHang;
 
-    @Column(name = "sinhnhat")
-    private Date sinhNhat;
+//    @Column(name = "sinhnhat")
+//    private Date sinhNhat;
 
     @Column(name = "sodienthoai")
     private String soDienThoai;
 
-    @Column(name = "email")
-    private String email;
+//    @Column(name = "email")
+//    private String email;
 
     @Column(name = "gioitinh")
     private Boolean gioiTinh;
 
-    @Column(name = "chungminhthu")
-    private String chungMinhThu;
-
-    @Column(name = "socancuoc")
-    private String soCanCuoc;
-
-    @Column(name = "anhdaidien")
-    private String anhDaiDien;
-
-    @Column(name = "trangthai")
-    private Integer trangThai;
-
-    @Column(name = "diemtichluy")
-    private Integer diemTichLuy;
+//    @Column(name = "chungminhthu")
+//    private String chungMinhThu;
+//
+//    @Column(name = "socancuoc")
+//    private String soCanCuoc;
+//
+//    @Column(name = "anhdaidien")
+//    private String anhDaiDien;
+//
+//    @Column(name = "trangthai")
+//    private Integer trangThai;
+//
+//    @Column(name = "diemtichluy")
+//    private Integer diemTichLuy;
 
     @ManyToOne
     @JoinColumn(name = "hangkhachhang")
     private HangKhachHang hangKhachHang;
 
-    @OneToOne
-    @JoinColumn(name = "nguoigioithieu")
-    private KhachHang khachHang;
+//    @OneToOne
+//    @JoinColumn(name = "nguoigioithieu")
+//    private KhachHang khachHang;
 }

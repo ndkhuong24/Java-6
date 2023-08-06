@@ -24,14 +24,14 @@ public class HangKhachHang {
     @Column(name = "tenhang")
     private String tenHang;
 
-    @Column(name = "mota")
-    private String moTa;
-
-    @Column(name = "diemtoithieu")
-    private Integer diemToiThieu;
-
-    @Column(name = "trangthai")
-    private Integer trangThai;
+//    @Column(name = "mota")
+//    private String moTa;
+//
+//    @Column(name = "diemtoithieu")
+//    private Integer diemToiThieu;
+//
+//    @Column(name = "trangthai")
+//    private Integer trangThai;
 
     @JsonIgnore
     @OneToMany(mappedBy = "hangKhachHang")
