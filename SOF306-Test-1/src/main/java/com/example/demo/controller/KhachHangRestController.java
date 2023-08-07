@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin("*")
 @RestController
@@ -17,8 +18,15 @@ public class KhachHangRestController {
     private IKhachHangService service;
 
     @GetMapping
-    public ResponseEntity<List<KhachHang>> getAll() {
-        return ResponseEntity.ok(service.getAll());
+    public ResponseEntity<List<KhachHang>> getAll(@RequestParam(defaultValue = "1") int page) {
+        if (page < 1) page = 1;
+        int pageNumber = page;
+        int pageSize = 5;
+        List<KhachHang> khachHangList = service.getAll().stream()
+                .skip(pageNumber*pageSize)
+                .limit(pageSize)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(khachHangList);
     }
 
     @GetMapping("/{maKhachHang}")
