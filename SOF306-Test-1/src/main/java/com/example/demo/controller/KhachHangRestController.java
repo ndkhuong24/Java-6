@@ -1,11 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.bean.KhachHang;
-import com.example.demo.service.KhachHangService;
 import com.example.demo.service.impl.IKhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
