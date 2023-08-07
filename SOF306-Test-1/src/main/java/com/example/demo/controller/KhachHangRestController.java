@@ -32,8 +32,8 @@ public class KhachHangRestController {
     }
 
     @PostMapping
-    public ResponseEntity<KhachHang> post(@RequestBody KhachHang khachHang){
-        if (service.existsById(khachHang.getMaKhachHang())){
+    public ResponseEntity<KhachHang> post(@RequestBody KhachHang khachHang) {
+        if (service.existsById(khachHang.getMaKhachHang())) {
             return ResponseEntity.badRequest().build();
         }
         service.save(khachHang);
