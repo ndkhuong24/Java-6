@@ -12,4 +12,8 @@ public interface IKhachHangService {
     boolean existsById(BigDecimal maKhachHang);
 
     Optional<KhachHang> findById(BigDecimal maKhachHang);
+
+    void save(KhachHang khachHang);
+
+    void deleteById(BigDecimal maKhachHang);
 }

@@ -29,4 +29,14 @@ public class KhachHangService implements IKhachHangService {
     public Optional<KhachHang> findById(BigDecimal maKhachHang) {
         return khachHangRepository.findById(maKhachHang);
     }
+
+    @Override
+    public void save(KhachHang khachHang) {
+        khachHangRepository.save(khachHang);
+    }
+
+    @Override
+    public void deleteById(BigDecimal maKhachHang) {
+        khachHangRepository.deleteById(maKhachHang);
+    }
 }

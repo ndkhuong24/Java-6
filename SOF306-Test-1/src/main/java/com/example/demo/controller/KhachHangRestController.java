@@ -30,4 +30,22 @@ public class KhachHangRestController {
         }
         return ResponseEntity.ok(service.findById(maKhachHang).get());
     }
+
+    @PostMapping
+    public ResponseEntity<KhachHang> post(@RequestBody KhachHang khachHang){
+        if (service.existsById(khachHang.getMaKhachHang())){
+            return ResponseEntity.badRequest().build();
+        }
+        service.save(khachHang);
+        return ResponseEntity.ok(khachHang);
+    }
+
+    @DeleteMapping("/{maKhachHang}")
+    public ResponseEntity<Void> delete(@PathVariable("maKhachHang") BigDecimal maKhachHang) {
+        if (!service.existsById(maKhachHang)) {
+            return ResponseEntity.notFound().build();
+        }
+        service.deleteById(maKhachHang);
+        return ResponseEntity.ok().build();
+    }
 }
