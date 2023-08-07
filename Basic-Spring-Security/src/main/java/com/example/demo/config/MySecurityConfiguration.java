@@ -13,7 +13,6 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Configuration
