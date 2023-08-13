@@ -30,7 +30,7 @@ public class KhachHangRestController {
         if (page < 1) page = 1;
         int pageNumber = page;
         int pageSize = 5;
-        Pageable pageable = PageRequest.of(page - 1, 5);
+        Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
         khachHangPage = service.getAll(pageable);
 //        List<KhachHang> khachHangList = service.getAll()
 //                .stream()
