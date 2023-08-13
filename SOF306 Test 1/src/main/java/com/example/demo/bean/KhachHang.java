@@ -2,13 +2,13 @@ package com.example.demo.bean;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Getter
 @Setter
@@ -20,6 +20,7 @@ public class KhachHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "makhachhang")
+    @NotNull(message = "Vui lòng nhập mã khách hàng")
     private BigDecimal maKhachHang;
 
     @Column(name = "tenkhachhang")

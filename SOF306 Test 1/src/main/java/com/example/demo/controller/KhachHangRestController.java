@@ -25,7 +25,8 @@ public class KhachHangRestController {
         if (page < 1) page = 1;
         int pageNumber = page;
         int pageSize = 5;
-        List<KhachHang> khachHangList = service.getAll().stream()
+        List<KhachHang> khachHangList = service.getAll()
+                .stream()
                 .skip(pageNumber * pageSize)
                 .limit(pageSize)
                 .collect(Collectors.toList());
@@ -52,6 +53,11 @@ public class KhachHangRestController {
             service.save(khachHang);
             return ResponseEntity.ok(khachHang);
         }
+//        if (service.existsById(khachHang.getMaKhachHang())) {
+//            return ResponseEntity.badRequest().build();
+//        }
+//        service.save(khachHang);
+//        return ResponseEntity.ok(khachHang);
     }
 
     @DeleteMapping("/{maKhachHang}")
