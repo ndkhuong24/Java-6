@@ -1,13 +1,13 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.bean.KhachHang;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
 
 public interface IKhachHangService {
-    List<KhachHang> getAll();
 
     boolean existsById(BigDecimal maKhachHang);
 
@@ -16,4 +16,6 @@ public interface IKhachHangService {
     void save(KhachHang khachHang);
 
     void deleteById(BigDecimal maKhachHang);
+
+    Page<KhachHang> getAll(Pageable pageable);
 }

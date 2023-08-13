@@ -4,6 +4,8 @@ import com.example.demo.bean.KhachHang;
 import com.example.demo.repository.KhachHangRepository;
 import com.example.demo.service.impl.IKhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -14,11 +16,6 @@ import java.util.Optional;
 public class KhachHangService implements IKhachHangService {
     @Autowired
     private KhachHangRepository khachHangRepository;
-
-    @Override
-    public List<KhachHang> getAll() {
-        return khachHangRepository.findAll();
-    }
 
     @Override
     public boolean existsById(BigDecimal maKhachHang) {
@@ -38,5 +35,10 @@ public class KhachHangService implements IKhachHangService {
     @Override
     public void deleteById(BigDecimal maKhachHang) {
         khachHangRepository.deleteById(maKhachHang);
+    }
+
+    @Override
+    public Page<KhachHang> getAll(Pageable pageable) {
+        return khachHangRepository.findAll(pageable);
     }
 }
