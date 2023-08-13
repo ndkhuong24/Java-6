@@ -2,8 +2,11 @@ package com.example.demo.controller;
 
 import com.example.demo.bean.KhachHang;
 import com.example.demo.service.impl.IKhachHangService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -23,7 +26,7 @@ public class KhachHangRestController {
         int pageNumber = page;
         int pageSize = 5;
         List<KhachHang> khachHangList = service.getAll().stream()
-                .skip(pageNumber*pageSize)
+                .skip(pageNumber * pageSize)
                 .limit(pageSize)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(khachHangList);
@@ -38,12 +41,17 @@ public class KhachHangRestController {
     }
 
     @PostMapping
-    public ResponseEntity<KhachHang> post(@RequestBody KhachHang khachHang) {
-        if (service.existsById(khachHang.getMaKhachHang())) {
-            return ResponseEntity.badRequest().build();
+    public ResponseEntity<?> post(@RequestBody @Valid KhachHang khachHang, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            List<ObjectError> list = bindingResult.getAllErrors();
+            return ResponseEntity.ok(list);
+        } else {
+            if (service.existsById(khachHang.getMaKhachHang())) {
+                return ResponseEntity.badRequest().build();
+            }
+            service.save(khachHang);
+            return ResponseEntity.ok(khachHang);
         }
-        service.save(khachHang);
-        return ResponseEntity.ok(khachHang);
     }
 
     @DeleteMapping("/{maKhachHang}")
