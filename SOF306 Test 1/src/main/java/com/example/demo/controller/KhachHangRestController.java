@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @CrossOrigin("*")
 @RestController
@@ -32,11 +31,6 @@ public class KhachHangRestController {
         int pageSize = 5;
         Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
         khachHangPage = service.getAll(pageable);
-//        List<KhachHang> khachHangList = service.getAll()
-//                .stream()
-//                .skip(pageNumber * pageSize)
-//                .limit(pageSize)
-//                .collect(Collectors.toList());
         return ResponseEntity.ok(khachHangPage.getContent());
     }
 
@@ -60,11 +54,6 @@ public class KhachHangRestController {
             service.save(khachHang);
             return ResponseEntity.ok(khachHang);
         }
-//        if (service.existsById(khachHang.getMaKhachHang())) {
-//            return ResponseEntity.badRequest().build();
-//        }
-//        service.save(khachHang);
-//        return ResponseEntity.ok(khachHang);
     }
 
     @DeleteMapping("/{maKhachHang}")
