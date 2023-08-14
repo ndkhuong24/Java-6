@@ -25,7 +25,7 @@ public class KhachHangRestController {
     Page<KhachHang> khachHangPage;
 
     @GetMapping
-    public ResponseEntity<List<KhachHang>> getAll(@RequestParam(defaultValue = "1") int page) {
+    public ResponseEntity<?/*List<KhachHang>*/> getAll(@RequestParam(defaultValue = "1") int page) {
         if (page < 1) page = 1;
         int pageNumber = page;
         int pageSize = 5;
