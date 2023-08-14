@@ -48,9 +48,9 @@ public class KhachHangRestController {
             List<ObjectError> list = bindingResult.getAllErrors();
             return ResponseEntity.ok(list);
         } else {
-            if (service.existsById(khachHang.getMaKhachHang())) {
-                return ResponseEntity.badRequest().build();
-            }
+//            if (service.existsById(khachHang.getMaKhachHang())) {
+//                return ResponseEntity.badRequest().build();
+//            }
             service.save(khachHang);
             return ResponseEntity.ok(khachHang);
         }
